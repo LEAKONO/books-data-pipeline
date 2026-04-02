@@ -33,17 +33,6 @@ def get_connection():
     )
 
 def load_books(books: list[dict], conn) -> int:
-    """
-    Insert a list of book dicts into the RAW_BOOKS table.
-
-    Returns the number of rows successfully inserted.
-
-    We use parameterized queries (%s placeholders) instead of string
-    formatting. This is critical for two reasons:
-    1. Security — prevents SQL injection attacks
-    2. Type safety — the connector handles proper escaping of
-       strings, booleans, floats etc automatically
-    """
     insert_sql = """
         INSERT INTO RAW_BOOKS (
             TITLE, CATEGORY, RATING, RATING_WORD,
@@ -98,8 +87,6 @@ def load_books(books: list[dict], conn) -> int:
 def get_latest_json_file() -> str | None:
     
     #Find the most recently created JSON file in data/raw/.
-
- 
     files = glob.glob("data/raw/books_*.json")
 
     if not files:
@@ -112,10 +99,6 @@ def get_latest_json_file() -> str | None:
 
 
 def verify_load(conn) -> None:
-    """
-    After loading, run a quick check to confirm data landed correctly.
-    This is called a sanity check — always verify after loading.
-    """
     cursor = conn.cursor()
 
     try:
@@ -144,9 +127,6 @@ def verify_load(conn) -> None:
     finally:
         cursor.close()
 
-
-# ── Entry point ────────────────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     logger.info("=== Snowflake Loader Starting ===")
 
@@ -174,7 +154,6 @@ if __name__ == "__main__":
         verify_load(conn)
 
     finally:
-        # Always close the connection, even if something fails
         conn.close()
         logger.info("Connection closed")
 

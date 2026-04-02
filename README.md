@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Book Pipeline
 
 An end-to-end data pipeline that scrapes book data from books.toscrape.com and loads it into Snowflake for analysis.
@@ -15,11 +14,11 @@ book-pipeline/
 │   └── books_scraper.py    # Scrapes books.toscrape.com
 ├── loaders/
 │   └── snowflake_loader.py # Loads JSON data into Snowflake
-├── dbt_project/            # dbt transformation models (coming soon)
-├── dags/                   # Airflow DAGs (coming soon)
-├── data/raw/               # Raw JSON files (git ignored)
-├── logs/                   # Log files (git ignored)
-├── .env.example            # Environment variable template
+├── dbt_project/            
+├── dags/                   
+├── data/raw/               
+├── logs/                   
+├── .env.example            
 └── requirements.txt        # Python dependencies
 ```
 
