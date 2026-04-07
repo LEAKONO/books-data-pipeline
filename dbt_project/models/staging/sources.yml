@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    database: BOOKS_DB
+    schema: RAW
+    tables:
+      - name: raw_books
+        description: "Raw books data scraped from books.toscrape.com"
+        columns:
+          - name: id
+            description: "Auto-generated primary key"
+          - name: upc
+            description: "Universal Product Code - unique identifier per book"
+          - name: title
+            description: "Book title"
+          - name: category
+            description: "Book category from breadcrumb"
+          - name: rating
+            description: "Numeric rating 1-5"
+          - name: price
+            description: "Book price in GBP"
+          - name: in_stock
+            description: "Whether the book is in stock"
+          - name: scraped_at
+            description: "When the scraper collected this record"
+          - name: loaded_at
+            description: "When the record was loaded into Snowflake"
