@@ -33,6 +33,23 @@ def get_connection():
     )
 
 def load_books(books: list[dict], conn) -> int:
+    # 1️⃣ Fetch existing UPCs from Snowflake
+    cursor = conn.cursor()
+    cursor.execute("SELECT UPC FROM RAW_BOOKS")
+    existing_upcs = {row[0] for row in cursor.fetchall()}
+    cursor.close()
+
+    # 2️⃣ Filter out books that already exist
+    new_books = [b for b in books if b.get("upc") not in existing_upcs]
+    
+    if not new_books:
+        logger.info("No new books to load — all already exist in Snowflake")
+        return 0
+
+    logger.info(f"Found {len(new_books)} new books to insert (skipping {len(books) - len(new_books)} duplicates)")
+    books = new_books
+
+    # 3️⃣ Prepare insertion
     insert_sql = """
         INSERT INTO RAW_BOOKS (
             TITLE, CATEGORY, RATING, RATING_WORD,
@@ -47,42 +64,38 @@ def load_books(books: list[dict], conn) -> int:
         )
     """
 
-    rows = []
-    for book in books:
-        rows.append((
-            book.get("title"),
-            book.get("category"),
-            book.get("rating"),
-            book.get("rating_word"),
-            book.get("price"),
-            book.get("price_excl_tax"),
-            book.get("price_incl_tax"),
-            book.get("in_stock"),
-            book.get("availability"),
-            book.get("upc"),
-            book.get("num_reviews"),
-            book.get("description"),
-            book.get("url"),
-            book.get("scraped_at"),
-        ))
+    rows = [
+        (
+            b.get("title"),
+            b.get("category"),
+            b.get("rating"),
+            b.get("rating_word"),
+            b.get("price"),
+            b.get("price_excl_tax"),
+            b.get("price_incl_tax"),
+            b.get("in_stock"),
+            b.get("availability"),
+            b.get("upc"),
+            b.get("num_reviews"),
+            b.get("description"),
+            b.get("url"),
+            b.get("scraped_at"),
+        )
+        for b in books
+    ]
 
+    # 4️⃣ Insert new books only
     cursor = conn.cursor()
-
     try:
-        #Insert ALL rows into database
-        # instead of making one database call per row
         cursor.executemany(insert_sql, rows)
         inserted = len(rows)
         logger.info(f"Successfully inserted {inserted} rows into RAW_BOOKS")
         return inserted
-
     except Exception as e:
         logger.error(f"Failed to insert rows: {e}")
         raise
-
     finally:
         cursor.close()
-
 
 def get_latest_json_file() -> str | None:
     
