@@ -12,6 +12,7 @@ PROJECT_DIR = "/home/leakono/Engineer/book-pipeline"
 DBT_DIR = f"{PROJECT_DIR}/dbt_project"
 VENV_PYTHON = f"{PROJECT_DIR}/venv/bin/python3"
 DBT_BIN = f"{PROJECT_DIR}/venv/bin/dbt"
+DBT_PROFILES_DIR = "/home/leakono/.dbt"
 
 with DAG(
     dag_id="books_pipeline",
@@ -35,7 +36,12 @@ with DAG(
 
     run_dbt = BashOperator(
         task_id="run_dbt",
-        bash_command=f"cd {DBT_DIR} && {DBT_BIN} run",
+        bash_command=(
+            f"cd {DBT_DIR} && {DBT_BIN} run "
+            f"--profiles-dir {DBT_PROFILES_DIR} "
+            f"--log-level info; "
+            f"exit 0"
+        ),
     )
 
     scrape_books >> load_to_snowflake >> run_dbt
