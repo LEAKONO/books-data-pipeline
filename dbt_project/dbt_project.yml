@@ -17,7 +17,5 @@ models:
   dbt_project:
     staging:
       +materialized: view
-      +schema: STAGING
     marts:
       +materialized: table
-      +schema: STAGING

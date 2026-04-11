@@ -5,7 +5,6 @@ with source as (
 
 ),
 cleaned as (
-
     select
         id,
         upc,

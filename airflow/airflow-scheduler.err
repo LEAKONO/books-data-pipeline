@@ -1,0 +1,494 @@
+[2026-04-10 16:12:13 +0300] [76124] [INFO] Starting gunicorn 22.0.0
+[2026-04-10 16:12:13 +0300] [76124] [ERROR] Connection in use: ('::', 8793)
+[2026-04-10 16:12:13 +0300] [76124] [ERROR] Retrying in 1 second.
+[2026-04-10 16:12:14 +0300] [76124] [ERROR] Connection in use: ('::', 8793)
+[2026-04-10 16:12:14 +0300] [76124] [ERROR] Retrying in 1 second.
+[2026-04-10 16:12:15 +0300] [76124] [ERROR] Connection in use: ('::', 8793)
+[2026-04-10 16:12:15 +0300] [76124] [ERROR] Retrying in 1 second.
+[2026-04-10 16:12:16 +0300] [76124] [ERROR] Connection in use: ('::', 8793)
+[2026-04-10 16:12:16 +0300] [76124] [ERROR] Retrying in 1 second.
+[2026-04-10 16:12:17 +0300] [76124] [ERROR] Connection in use: ('::', 8793)
+[2026-04-10 16:12:17 +0300] [76124] [ERROR] Retrying in 1 second.
+[2026-04-10 16:12:18 +0300] [76124] [ERROR] Can't connect to ('::', 8793)
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76163) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76166) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76170) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76174) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76178) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76182) is multi-threaded, use of fork() may lead to deadlocks in the child.
+/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/executors/local_executor.py:110 DeprecationWarning: This process (pid=76186) is multi-threaded, use of fork() may lead to deadlocks in the child.
+Process ForkProcess-35:
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    dbapi_connection = rec.get_connection()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 241, in _run_processor_manager
+    processor_manager.start()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 476, in start
+    return self._run_parsing_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 603, in _run_parsing_loop
+    DagWarning.purge_inactive_dag_warnings()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 115, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/models/dagwarning.py", line 81, in purge_inactive_dag_warnings
+    cls._purge_inactive_dag_warnings_with_retry(session)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/retries.py", line 89, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/retries.py", line 98, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/models/dagwarning.py", line 94, in _purge_inactive_dag_warnings_with_retry
+    session.execute(query.execution_options(synchronize_session=False))
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    dbapi_connection = rec.get_connection()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Exception ignored in: <Finalize object, dead>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/util.py", line 227, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/util.py", line 469, in close_fds
+    os.close(fd)
+OSError: [Errno 9] Bad file descriptor
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 936, in _checkout
+    raise exc.InvalidatePoolError()
+sqlalchemy.exc.InvalidatePoolError: ()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 970, in _checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 967, in _checkout
+    fairy._connection_record.get_connection()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 402, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 431, in execute_job
+    ret = execute_callable()
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 846, in _execute
+    self._run_scheduler_loop()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 992, in _run_scheduler_loop
+    next_event = timers.run(blocking=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/sched.py", line 151, in run
+    action(*argument, **kwargs)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/event_scheduler.py", line 40, in repeat
+    action(*args, **kwargs)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 1579, in _emit_pool_metrics
+    pools = Pool.slots_stats(session=session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/models/pool.py", line 177, in slots_stats
+    pool_rows = session.execute(query)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 970, in _checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 967, in _checkout
+    fairy._connection_record.get_connection()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    dbapi_connection = rec.get_connection()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/bin/airflow", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 58, in scheduler
+    run_command_with_daemon_option(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 80, in run_command_with_daemon_option
+    callback()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 61, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 49, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 404, in run_job
+    job.complete_execution(session=session)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 245, in complete_execution
+    Job._update_in_db(job=self, session=session)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 115, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 340, in _update_in_db
+    session.merge(job)
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+           ^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+             ^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 497, in checkout
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    dbapi_connection = rec.get_connection()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 630, in get_connection
+    self.__connect()
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leakono/Engineer/book-pipeline/airflow-venv/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  the database system is shutting down
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
