@@ -1,6 +1,4 @@
-
 with stg as (
-
     select * from {{ ref('stg_books') }}
 ),
 
@@ -15,10 +13,8 @@ category_stats as (
         round(avg(price), 2)            as avg_price,
         round(avg(rating), 2)           as avg_rating,
         max(scraped_at)                 as last_scraped_at
-
     from stg
     group by category
-
 )
 
 select * from category_stats

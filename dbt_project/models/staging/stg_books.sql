@@ -1,4 +1,3 @@
-
 with source as (
     -- Pull everything from the raw table
     select * from {{ source('raw', 'raw_books') }}
@@ -9,24 +8,17 @@ cleaned as (
         id,
         upc,
         trim(title)     as title,
-        -- Fix bad categories
-        -- Some books have 'Add a comment' or 'Default' as category
+        -- Fix bad categories with professional naming
         case
-            when trim(category) in ('Add a comment', 'Default', '')
-                then 'Unknown'
+            when trim(category) in ('Add a comment', 'Default', '', 'Unknown', 'Uncategorized')
+                then 'General Collection'
             else trim(category)
         end             as category,
-
-        -- Ratings
         rating,
         rating_word,
-
-        -- Prices — round to 2 decimal places for consistency
         round(price, 2)          as price,
         round(price_excl_tax, 2) as price_excl_tax,
         round(price_incl_tax, 2) as price_incl_tax,
-
-        -- Stock
         in_stock,
 
         -- Extract just the number from "In stock (22 available)"
@@ -40,17 +32,9 @@ cleaned as (
                 then 0
             else null
         end             as stock_count,
-
-        -- Reviews
         num_reviews,
-
-        -- Description
         description,
-
-        -- URL
         url,
-
-        -- Timestamps
         scraped_at,
         loaded_at
 
